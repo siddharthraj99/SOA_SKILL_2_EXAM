@@ -1,0 +1,26 @@
+{
+  "id" : "3a48b9b4-800c-414a-9f8c-10428dc317ac",
+  "request" : {
+    "urlPath" : "/ms1/signin",
+    "method" : "POST",
+    "headers" : {
+      "Content-Type" : {
+        "equalTo" : "application/json"
+      }
+    },
+    "bodyPatterns" : [ {
+      "matchesJsonPath" : "$[?(@.['username'] == 'testuser')]"
+    }, {
+      "matchesJsonPath" : "$[?(@.['password'] == 'password123')]"
+    } ]
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"token\":\"sample-fallback-jwt-token\"}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template", "spring-cloud-contract" ]
+  },
+  "uuid" : "3a48b9b4-800c-414a-9f8c-10428dc317ac"
+}

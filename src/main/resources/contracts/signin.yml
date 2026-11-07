@@ -1,0 +1,21 @@
+description: "POST contract for /ms1/signin with dynamic token matcher"
+name: "shouldReturnDynamicJwtTokenOnSignIn"
+request:
+  method: POST
+  url: /ms1/signin
+  headers:
+    Content-Type: application/json
+  body:
+    username: "testuser"
+    password: "password123"
+response:
+  status: 200
+  headers:
+    Content-Type: application/json
+  body:
+    token: "sample-fallback-jwt-token"
+  matchers:
+    body:
+      - path: $.token
+        type: by_regex
+        value: ".+"

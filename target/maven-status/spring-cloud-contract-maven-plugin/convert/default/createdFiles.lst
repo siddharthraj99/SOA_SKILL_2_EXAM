@@ -1,0 +1,2 @@
+META-INF\com.example\auth-contract-service\0.0.1-SNAPSHOT\contracts\signin.yml
+META-INF\com.example\auth-contract-service\0.0.1-SNAPSHOT\mappings\shouldReturnDynamicJwtTokenOnSignIn.json
